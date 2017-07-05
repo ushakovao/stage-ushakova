@@ -37,8 +37,8 @@ TODO List  Semaine 27:
 * Méthode static : biased 2D,3D with weight
 * Lancer vulcanistation sur le lattice
 * Ajouter l'animation sur serpent 
-* EDP Stochastique : polymères/épidemique/classics(chaleur et NS) 
-
-
+* _Rappot_ : Décrire l'idée du modèle épidémiologique SIR
+* _Rappot_ : SIR de point de vue des EDPs 
+* _Rappot_ : SIR de point de vue des SAWs 
 
 
