@@ -89,6 +89,14 @@ stem:[e^{-Q(\phi_t( \textbf{x}_0))}p(t,\phi_t(\textbf{x}_0)) =e^{Q(\textbf{x}_0)
 
 Donc au final:
 
+stem:[0=e^{Q(\phi_t (x_0))} \frac{d}{dt} e^{-Q(\phi_t(\textbf{x}_0))}p(t,\phi_t(\textbf{x}_0))= ]
+stem:[=-F(\phi_t(\textbf{x}_0))*\nabla Q (\phi_t(\textbf{x}_0))p(t,\phi_t(\textbf{x}_0))+\partial_t p(t,\phi_t (\textbf{x}_0))+F(\phi_t(\textbf{x}_0)) \nabla p(t,\phi_t(\textbf{x}_0))]
+stem:[=\nabla * Fp+ F\nabla p+ \partial_t p]
+stem:[=\partial_t p + \nabla *(pF)]
+
+Les equations du modèle SIR  forment les caractéristiques pour l'EDP hyperbolique de Kolmogorov et la densité de la probabilité sera transporté le long de ces caractéristiques.
+
+
 
 
 
