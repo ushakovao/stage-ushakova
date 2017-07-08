@@ -72,6 +72,27 @@ stem:[ \approx p+\frac{1}{N} (\partial_x ((\alpha xy - \gamma(1-x-y))p) +\partia
 Enfin, on obtient EDP hyperbolique de Kolmogorov stem:[\partial_t p = \partial_x ((axy-c(1-x-y))p)+\partial_y ((b-ax)yp) ] avec la probabilité
 stem:[ \frac{d}{dt} \int_S p(t,x,y)dxdy=0] où S est un triangle.
 
+Dans le cas où on suppose qu'on sait la proportion exacte de stem:[S,I] et stem:[ R] au moment stem:[t], donc on peut trouver la solution pour tout stem:[t].  Dans notre cas, on ne sait que la loi de  = probabilité, donc l'équation de Kolmogorov transport cette probabilité dans le temps.
+
+==== SIR comme EDP de transport
+
+**x** = (x,y) , stem:[\Phi_t(\textbf{x})]
+* X =c(1-X-Y)-stem:[\alpha] XY
+* Y =(aX-b)Y
+
+Let stem:[p_0(\textbf{x}) \in C^1 (R^2)]
+stem:[ F * \nabla Q = - \nabla * F ] (F is rhs)
+
+stem:[p(t,x,y) = e^{Q(\textbf x)-Q(\Phi_{-t}(\textbf{x}))}p_0(\Phi_{-t}(\textbf{x}))] avec stem:[\textbf{x}=(x,y)].
+
+stem:[e^{-Q(\phi_t( \textbf{x}_0))}p(t,\phi_t(\textbf{x}_0)) =e^{Q(\textbf{x}_0)} p_0(\textbf{x}_0) ]
+
+Donc au final:
+
+
+
+
+
 
 
 

@@ -547,7 +547,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 \( \approx p+\frac{1}{N} (\partial_x ((\alpha xy - \gamma(1-x-y))p) +\partial_y((\beta-\alpha x)yp) \)</p>
 </div>
 <div class="paragraph">
-<p>Enfin, \(\partial_t p = \partial_x ((axy-c(1-x-y))p)+\partial_y ((b-ax)yp) \)</p>
+<p>Enfin, on obtient EDP hyperbolique de Kolmogorov \(\partial_t p = \partial_x ((axy-c(1-x-y))p)+\partial_y ((b-ax)yp) \) avec la probabilité
+\( \frac{d}{dt} \int_S p(t,x,y)dxdy=0\) où S est un triangle.</p>
+</div>
+<div class="paragraph">
+<p>Dans le cas où on suppose qu&#8217;on sait la proportion exacte de \(S,I\) et \( R\) au moment \(t\), donc on peut trouver la solution pour tout \(t\).  Dans notre cas, on ne sait que la loi de  = probabilité, donc l&#8217;équation de Kolmogorov transport cette probabilité dans le temps.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sir_comme_edp_de_transport">SIR comme EDP de transport</h4>
+<div class="paragraph">
+<p><strong>x</strong> = (x,y) , \(\Phi_t(\textbf{x})\)
+* X =c(1-X-Y)-\(\alpha\) XY
+* Y =(aX-b)Y</p>
+</div>
+<div class="paragraph">
+<p>Let \(p_0(\textbf{x}) \in C^1 (R^2)\)
+\( F * \nabla Q = - \nabla * F \) (F is rhs)</p>
+</div>
+<div class="paragraph">
+<p>\(p(t,x,y) = e^{Q(\textbf x)-Q(\Phi_{-t}(\textbf{x}))}p_0(\Phi_{-t}(\textbf{x}))\) avec \(\textbf{x}=(x,y)\).</p>
+</div>
+<div class="paragraph">
+<p>\(e^{-Q(\phi_t( \textbf{x}_0))}p(t,\phi_t(\textbf{x}_0)) =e^{Q(\textbf{x}_0)} p_0(\textbf{x}_0) \)</p>
 </div>
 </div>
 </div>
@@ -556,7 +578,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-08 13:18:59 CEST
+Last updated 2017-07-08 15:54:54 CEST
 </div>
 </div>
 <script type="text/x-mathjax-config">
