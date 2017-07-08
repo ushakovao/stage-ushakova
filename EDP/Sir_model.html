@@ -436,10 +436,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
+<h2 id="_la_méthode_des_caractéristiques">La méthode des caractéristiques</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La méthode des caractéristiques est une technique permettant de résoudre les équations aux dérivées partielles. Particulièrement adaptée aux problèmes de transport, elle est utilisée dans de nombreux domaines tels que la mécanique des fluides ou le transport de particules.</p>
+</div>
+<div class="paragraph">
+<p>Pour une équation aux dérivées partielles du premier ordre, la méthode des caractéristiques cherche des courbes  « caractéristiques » le long desquelles l&#8217;équation aux dérivées partielles se réduit à une simple équation différentielle ordinaire. La résolution de l&#8217;équation différentielle ordinaire le long d&#8217;une caractéristique permet de retrouver la solution du problème original.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_sir">SIR</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>SIR : susceptible, infected, recovered - est un modèle très simple, à partir duquel on dérive des modèles plus complexes. SIR permet de modèliser la propagation de la rougele ou parotidite virale.</p>
+<p>SIR : susceptible, infected, recovered - est un modèle très simple, à partir duquel on dérive des modèles plus complexes. SIR permet de modèliser la propagation de la rougele ou parotidite virale. De plus, on supose le cas sans dynamique vitale, c.à.d personne n&#8217;est ni née, ni décédée.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -451,12 +462,101 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <img src="SIRdynamique.png" alt="SIRdynamique">
 </div>
 </div>
+<div class="sect2">
+<h3 id="_odes">ODEs</h3>
+<div class="paragraph">
+<p>Problème initial:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(S'= \gamma R - \alpha IS\)</p>
+</li>
+<li>
+<p>\(I'= \alpha IS - \beta I\)</p>
+</li>
+<li>
+<p>\(R'= \beta I - \gamma R\)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>where \(S+I+R=1\)</p>
+</div>
+<div class="paragraph">
+<p>Et si l&#8217;immunauté n&#8217;est pas permanent? (la grippe)</p>
+</div>
+<div class="paragraph">
+<p>Stochastique SIR: on fait le choix aléatoire entre S,I,R:
+* Si on choisi S, donc on le change pour I avec la probabilité \( \frac{\alpha NI(t)}{N-1}\)
+* Si on choisi I, donc on le change pour R avec la probabilité \(\beta\)
+* Si on choisi R, donc on le change pour S avec la probabilité \(\gamma\)</p>
+</div>
+<div class="paragraph">
+<p>Sous les hypothèses:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(A(\Delta t) \approx A_0 \Delta t\)</p>
+</li>
+<li>
+<p>\(B(\Delta t) \approx B_0 \Delta t\)</p>
+</li>
+<li>
+<p>\(C(\Delta t) \approx C_0 \Delta t\)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>On obtient la discretization Euler du problème initial:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(S(t+\Delta t)=S(t)(1-A(\Delta t)I(t))+R(t)C(\Delta t)\)</p>
+</li>
+<li>
+<p>\(I(t+\Delta t)=I(t)(1-B(\Delta t))+A(\Delta t) I(t) S(t)\)</p>
+</li>
+<li>
+<p>\(R(t+\Delta t)=R(t)(1-C(\Delta t))+B(\Delta t)I(t)\)</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_dérivation_de_edp_hyperbolique_de_kolmogorov_pour_un_modèle_stochastique_discrèt">Dérivation de EDP hyperbolique de Kolmogorov pour un modèle stochastique discrèt:</h4>
+<div class="paragraph">
+<p>Supposons \(P_{N, \Delta t} (t,n,m)\) - la probabilité au moment \(t\) d&#8217;avoir \(n\) personnes susceptibles, \(m\) personnes infectées et \(N-n-m\) personnes immunisées dans population constante \(N\).</p>
+</div>
+<div class="paragraph">
+<p>Les constantes \(\alpha, \beta, \gamma\) au limite</p>
+</div>
+<div class="paragraph">
+<p>\(P_{N, \Delta t} (t+\Delta t,n,m) = \alpha \frac{(n+1)(m-1)}{N(N-1)} P_{N, \Delta t}(t,n+1,m-1)\)
+\( + \beta \frac{m+1}{N} P_{N, \Delta t} (t,n,m+1) + \gamma \frac{N-n-m+1}{N}P_{N, \Delta t}(t,n-1,m) \)
+\( + (\frac{n}{N} (1-\alpha \frac{m}{N-1}) +\frac{m}{N}(1-\beta) + \frac {N-n-m}{N}(1-\gamma)  ) P_{N, \Delta t}(t,n,m)\)</p>
+</div>
+<div class="paragraph">
+<p>Maintenant, on pose \(x=n/N\), \(y=m/N\) et \(p(t,x,y)=NP_{N, \Delta t}(t,xN,yN)\).</p>
+</div>
+<div class="paragraph">
+<p>\(t+\Delta t,x,y)= \alpha \frac{(x+1/N)(y-1/N)}{1-1/N} p(t,x+1/N,y-1/N)\)
+\(+ \beta (y+\frac{1}{N}) p(t,x,y+1/N) + \gamma (1-x-y+\frac{1}{N}) p(t,x-1/N,y)\)
+\( + (x(1-\frac{\alpha y}{1-1/N}) y(1-\beta)(1-x-y)(1-\gamma)  p(t,x,y)\)
+\( \approx p+\frac{1}{N} (\partial_x ((\alpha xy - \gamma(1-x-y))p) +\partial_y((\beta-\alpha x)yp) \)</p>
+</div>
+<div class="paragraph">
+<p>Enfin, \(\partial_t p = \partial_x ((axy-c(1-x-y))p)+\partial_y ((b-ax)yp) \)</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-05 10:33:40 CEST
+Last updated 2017-07-08 13:18:59 CEST
 </div>
 </div>
 <script type="text/x-mathjax-config">
