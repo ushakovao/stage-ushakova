@@ -34,11 +34,21 @@ TODO List  Semaine 26:
 
 TODO List  Semaine 27:
 
-* Méthode static : biased 2D,3D with weight
-* Lancer vulcanistation sur le lattice
-* Ajouter l'animation sur serpent 
-* _Rappot_ : Décrire l'idée du modèle épidémiologique SIR
-* _Rappot_ : SIR de point de vue des EDPs 
-* _Rappot_ : SIR de point de vue des SAWs 
+* Méthode static : biased 2D,3D with weight - **NOT DONE! à demander**
+* Lancer vulcanistation sur le lattice - _pas fini_
+* Ajouter l'animation sur serpent - **NOT DONE! à demander**
+* _Rappot_ : Décrire l'idée du modèle épidémiologique SIR - **OK**
+* _Rappot_ : SIR de point de vue des EDPs - **OK**
+* _Rappot_ : SIR de point de vue des SAWs - **OK**
+
+TODO List  Semaine 28:
+
+* Méthode static : biased 2D,3D with weight - **OK**
+* SAW: épidémiologique - **à demander - bugs**
+* SAW : finir vulcanistation
+* SAW : faire SIR dans Python
+* EDP : finir EDOs dans Octave 
+* EDP : méthode des caractèristiques?
+* EDP : MEF - maths
 
 

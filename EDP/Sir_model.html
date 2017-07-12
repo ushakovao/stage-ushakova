@@ -487,10 +487,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Et si l&#8217;immunauté n&#8217;est pas permanent? (la grippe)</p>
 </div>
 <div class="paragraph">
-<p>Stochastique SIR: on fait le choix aléatoire entre S,I,R:
-* Si on choisi S, donc on le change pour I avec la probabilité \( \frac{\alpha NI(t)}{N-1}\)
-* Si on choisi I, donc on le change pour R avec la probabilité \(\beta\)
-* Si on choisi R, donc on le change pour S avec la probabilité \(\gamma\)</p>
+<p>Stochastique SIR: on fait le choix aléatoire entre S,I,R:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Si on choisi S, donc on le change pour I avec la probabilité \( \frac{\alpha NI(t)}{N-1}\)</p>
+</li>
+<li>
+<p>Si on choisi I, donc on le change pour R avec la probabilité \(\beta\)</p>
+</li>
+<li>
+<p>Si on choisi R, donc on le change pour S avec la probabilité \(\gamma\)</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Sous les hypothèses:</p>
@@ -571,6 +581,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>\(e^{-Q(\phi_t( \textbf{x}_0))}p(t,\phi_t(\textbf{x}_0)) =e^{Q(\textbf{x}_0)} p_0(\textbf{x}_0) \)</p>
 </div>
+<div class="paragraph">
+<p>Donc au final:</p>
+</div>
+<div class="paragraph">
+<p>\(0=e^{Q(\phi_t (x_0))} \frac{d}{dt} e^{-Q(\phi_t(\textbf{x}_0))}p(t,\phi_t(\textbf{x}_0))= \)
+\(=-F(\phi_t(\textbf{x}_0))*\nabla Q (\phi_t(\textbf{x}_0))p(t,\phi_t(\textbf{x}_0))\partial_t p(t,\phi_t (\textbf{x}_0))+F(\phi_t(\textbf{x}_0)) \nabla p(t,\phi_t(\textbf{x}_0))]
+stem:[=\nabla * Fp F\nabla p+ \partial_t p\)
+\(=\partial_t p + \nabla *(pF)\)</p>
+</div>
+<div class="paragraph">
+<p>Les equations du modèle SIR  forment les caractéristiques pour l&#8217;EDP hyperbolique de Kolmogorov et la densité de la probabilité sera transporté le long de ces caractéristiques.</p>
+</div>
 </div>
 </div>
 </div>
@@ -578,7 +600,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-08 15:54:54 CEST
+Last updated 2017-07-11 09:31:50 CEST
 </div>
 </div>
 <script type="text/x-mathjax-config">

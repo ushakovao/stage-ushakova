@@ -14,6 +14,8 @@ La méthode des caractéristiques est une technique permettant de résoudre les 
 
 Pour une équation aux dérivées partielles du premier ordre, la méthode des caractéristiques cherche des courbes  « caractéristiques » le long desquelles l'équation aux dérivées partielles se réduit à une simple équation différentielle ordinaire. La résolution de l'équation différentielle ordinaire le long d'une caractéristique permet de retrouver la solution du problème original.
 
+
+
 == SIR
 
 SIR : susceptible, infected, recovered - est un modèle très simple, à partir duquel on dérive des modèles plus complexes. SIR permet de modèliser la propagation de la rougele ou parotidite virale. De plus, on supose le cas sans dynamique vitale, c.à.d personne n'est ni née, ni décédée.
@@ -35,6 +37,7 @@ where stem:[S+I+R=1]
 Et si l'immunauté n'est pas permanent? (la grippe)
 
 Stochastique SIR: on fait le choix aléatoire entre S,I,R:
+
 * Si on choisi S, donc on le change pour I avec la probabilité stem:[ \frac{\alpha NI(t)}{N-1}]
 * Si on choisi I, donc on le change pour R avec la probabilité stem:[\beta]
 * Si on choisi R, donc on le change pour S avec la probabilité stem:[\gamma]
